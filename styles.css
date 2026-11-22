@@ -352,6 +352,176 @@ button:focus {
   color: var(--cream);
 }
 
+/* ---------- Pre-Order List feature (Touchstone 4) ---------- */
+
+/* Count badge on the "Contact & Pre-Order" nav link */
+.badge {
+  display: inline-block;
+  min-width: 1.5rem;
+  margin-left: 0.4rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background-color: var(--cream);
+  color: var(--espresso);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.preorder-panel {
+  background-color: var(--cream);
+  border: 2px solid var(--honey);
+  border-left-width: 5px;
+}
+
+.count {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--espresso);
+  white-space: nowrap;
+}
+
+.empty-note {
+  font-style: italic;
+}
+
+.preorder-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+}
+
+.preorder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--honey);
+}
+
+.preorder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Hidden attribute must win over display: flex */
+[hidden] {
+  display: none !important;
+}
+
+/* Small buttons: "Add to my list", "Remove", "Clear list" */
+.btn-small {
+  display: inline-block;
+  align-self: auto;
+  margin-top: var(--space-sm);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  background-color: #FFFFFF;
+  color: var(--espresso);
+  border: 2px solid var(--espresso);
+}
+
+.preorder-item .btn-small,
+.preorder-actions .btn-small {
+  margin-top: 0;
+}
+
+.btn-small.added {
+  background-color: var(--honey);
+}
+
+/* Keep dark text on small buttons when hovered or focused (readable contrast) */
+.btn-small:hover,
+.btn-small:focus {
+  background-color: var(--honey);
+  color: var(--espresso);
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--espresso);
+  color: var(--cream);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  background-color: var(--honey);
+  color: var(--espresso);
+}
+
+/* "Add to my list" buttons always sit on their own line */
+.add-btn {
+  display: block;
+}
+
+/* ---------- Form validation (Touchstone 4) ---------- */
+.error {
+  color: var(--rust);
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0;
+}
+
+.error:empty {
+  display: none;
+}
+
+.error::before {
+  content: "\26A0  ";
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: var(--rust);
+  border-width: 3px;
+  background-color: var(--cream);
+}
+
+.hint {
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+.checkbox-row label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.prefill-note,
+.form-status:not(:empty) {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  border: 2px solid var(--honey);
+  background-color: var(--cream);
+  font-weight: bold;
+}
+
+.form-status {
+  margin: 0;
+}
+
+.status-error {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
 /* ---------- Footer ---------- */
 footer {
   background-color: var(--espresso);
