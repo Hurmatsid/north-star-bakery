@@ -1,0 +1,470 @@
+/* ==========================================================
+   North Star Bakery - Main Stylesheet
+   Touchstone 3: Visual Design and Responsive Layout
+
+   Approach: mobile-first. Base styles below are for small
+   screens (phones). The media query at the bottom adjusts
+   the layout for tablets and desktops (min-width: 768px).
+
+   COLOR PALETTE (4 colors)
+     Cream     #FDF6EC  - page background
+     Espresso  #3E2417  - body text, header, footer
+     Honey     #E3A63B  - accents, buttons, active nav link
+     Rust      #9A3B1E  - links and h2 headings
+
+   FONTS (2 families)
+     Headings: Georgia (serif)  - warm, traditional, handmade feel
+     Body:     Verdana (sans)   - very readable at small sizes
+   ========================================================== */
+
+/* ---------- Color and font variables ---------- */
+:root {
+  --cream: #FDF6EC;
+  --espresso: #3E2417;
+  --honey: #E3A63B;
+  --rust: #9A3B1E;
+
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: Verdana, Geneva, Tahoma, sans-serif;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --radius: 8px;
+}
+
+/* ---------- Base / reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--espresso);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Images, video, and audio shrink to fit small screens */
+img,
+video,
+audio {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+audio {
+  width: 100%;
+}
+
+/* ---------- Typography and visual hierarchy ---------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--espresso);
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--rust);
+  border-bottom: 3px solid var(--honey);
+  padding-bottom: 0.25rem;
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--espresso);
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+strong {
+  color: var(--rust);
+}
+
+a {
+  color: var(--rust);
+  font-weight: bold;
+}
+
+a:hover,
+a:focus {
+  color: var(--espresso);
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--honey);
+  outline-offset: 2px;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: var(--space-sm);
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+  background-color: var(--espresso);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;   /* stacked on phones */
+  align-items: center;
+  gap: var(--space-md);
+}
+
+header img {
+  width: 140px;
+  background-color: var(--cream);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;   /* large tap targets for phones */
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--cream);
+  border-color: var(--honey);
+}
+
+/* Highlights the page the visitor is on */
+nav a[aria-current="page"] {
+  background-color: var(--honey);
+  color: var(--espresso);
+}
+
+/* ---------- Main content area ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+main > p {
+  font-size: 1.05rem;
+}
+
+section {
+  background-color: #FFFFFF;
+  border-left: 5px solid var(--honey);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Flexbox layout helpers ---------- */
+
+/* Two-column area (text + image). Stacks on phones. */
+.split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Row of cards that wraps. One card per row on phones. */
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card {
+  background-color: var(--cream);
+  border: 1px solid var(--honey);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+/* "What We're Known For" list displayed as cards */
+.card-row.list-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-row.list-cards li {
+  margin: 0;
+}
+
+/* ---------- Images and figure ---------- */
+section img,
+picture img {
+  border-radius: var(--radius);
+  width: 100%;
+}
+
+figure {
+  margin: var(--space-md) 0 0;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.95rem;
+  padding: var(--space-sm) 0;
+  border-bottom: 2px solid var(--honey);
+}
+
+/* Space between a card row and the paragraph after it */
+.card-row + p {
+  margin-top: var(--space-md);
+}
+
+video {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+/* ---------- Address and hours table ---------- */
+address {
+  font-style: normal;
+  margin-bottom: var(--space-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: var(--space-sm);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--honey);
+}
+
+thead th {
+  background-color: var(--espresso);
+  color: var(--cream);
+}
+
+/* ---------- Form ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+fieldset {
+  border: 2px solid var(--honey);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--rust);
+  padding: 0 0.4rem;
+}
+
+label {
+  font-weight: bold;
+  margin-top: var(--space-md);
+  margin-bottom: 0.25rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem;
+  color: var(--espresso);
+  background-color: #FFFFFF;
+  border: 2px solid var(--espresso);
+  border-radius: var(--radius);
+}
+
+button {
+  align-self: stretch;      /* full width on phones */
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--honey);
+  color: var(--espresso);
+  border: 2px solid var(--espresso);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--espresso);
+  color: var(--cream);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--espresso);
+  color: var(--cream);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+footer a {
+  color: var(--honey);
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--cream);
+}
+
+/* ==========================================================
+   MEDIA QUERY - tablets and desktops (768px and wider)
+   ========================================================== */
+@media (min-width: 768px) {
+
+  /* Header: logo on the left, navigation on the right */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  header img {
+    width: 160px;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+
+  /* Larger page title on bigger screens */
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: var(--space-lg);
+  }
+
+  section {
+    padding: var(--space-lg);
+  }
+
+  /* Text and image sit side by side */
+  .split {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Equal columns. min-width: 0 lets the image shrink so the
+     text column is not squeezed by the image's width attribute. */
+  .split > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Cards sit in a row instead of stacking */
+  .card-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-row > * {
+    flex: 1 1 220px;
+  }
+
+  /* Contact page: form on the left, location and hours on the right */
+  .contact-layout {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .contact-layout > section {
+    flex: 3;
+  }
+
+  .contact-layout > .contact-info {
+    flex: 2;
+  }
+
+  /* Keep the Signature Loaf figure from filling the whole screen */
+  figure {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Submit button no longer needs to fill the width */
+  button {
+    align-self: flex-start;
+  }
+
+  /* Footer items spread across one line */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+  }
+}
