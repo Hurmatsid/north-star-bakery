@@ -47,16 +47,18 @@ body {
   line-height: 1.6;
 }
 
-/* Images, video, and audio shrink to fit small screens */
+/* Images and video shrink to fit small screens */
 img,
-video,
-audio {
+video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Audio player fills the width. No height: auto here,
+   because that collapses the audio controls to 0px tall. */
 audio {
+  display: block;
   width: 100%;
 }
 
