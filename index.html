@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="North Star Bakery is a neighborhood bakery offering fresh bread, pastries, and custom cakes. Pre-order for pickup.">
+  <title>Home | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="bakery-logo.png" alt="North Star Bakery logo, home page" width="160">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact &amp; Pre-Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to North Star Bakery</h1>
+
+    <section aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Baked Fresh for Our Neighbors</h2>
+      <div class="split">
+        <p>Every morning before sunrise, our ovens are warm and our bakers are shaping the loaves, pastries, and treats you will find on our shelves. Whether you are grabbing a croissant on your commute, picking up bread for a family dinner, or planning a celebration, we are glad you are here.</p>
+        <img src="bakery-storefront.jpg" alt="The North Star Bakery storefront with a hand-painted sign and baked goods displayed in the front window" width="600">
+      </div>
+    </section>
+
+    <section aria-labelledby="welcome-audio-heading">
+      <h2 id="welcome-audio-heading">A Welcome from Our Head Baker</h2>
+      <p>Press play to hear a short welcome message from our team.</p>
+      <audio controls>
+        <source src="bakery-welcome.mp3" type="audio/mpeg">
+        Your browser does not support the audio element. In this message, our head baker welcomes you to North Star Bakery, shares that everything is baked fresh each morning, and invites you to stop by or place a pre-order. You can <a href="bakery-welcome.mp3">download the welcome message</a> instead.
+      </audio>
+    </section>
+
+    <section aria-labelledby="known-for-heading">
+      <h2 id="known-for-heading">What We're Known For</h2>
+      <ul class="card-row list-cards">
+        <li class="card"><strong>Slow-fermented sourdough</strong> made with our own starter</li>
+        <li class="card"><strong>Flaky, buttery pastries</strong> laminated by hand</li>
+        <li class="card"><strong>Custom celebration cakes</strong> for birthdays, showers, and community events</li>
+        <li class="card"><strong>Local ingredients</strong> from farms and mills in our region</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Item of the Week: Honey Oat Loaf</h2>
+      <div class="split">
+        <picture>
+          <source media="(min-width: 800px)" srcset="bakery-feature-large.jpg">
+          <img src="bakery-feature-small.jpg" alt="A golden honey oat loaf topped with rolled oats, sliced to show its soft interior" width="400">
+        </picture>
+        <p>This week, our bakers are featuring a soft honey oat loaf sweetened with local wildflower honey. It is perfect for toast, sandwiches, and school lunches. Quantities are limited, so <a href="contact.html">pre-order yours</a> for pickup.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hours-heading">
+      <h2 id="hours-heading">Hours and Location</h2>
+      <address>
+        North Star Bakery<br>
+        123 Maple Street<br>
+        Springfield, USA 00000
+      </address>
+      <p>Open Tuesday through Sunday, 6:30 a.m. to 3:00 p.m. Closed Mondays.</p>
+      <p><a href="contact.html">See full hours and directions</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. Baked with care in our neighborhood.</p>
+    <p>Phone: <a href="tel:+15555550123">(555) 555-0123</a></p>
+  </footer>
+</body>
+</html>
