@@ -6,6 +6,7 @@
   <meta name="description" content="Contact North Star Bakery or send a pre-order request. Find our location and hours of operation.">
   <title>Contact &amp; Pre-Order | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -29,40 +30,53 @@
     <div class="contact-layout">
       <section aria-labelledby="form-heading">
         <h2 id="form-heading">Inquiry and Pre-Order Request</h2>
-        <form action="#" method="post">
+        <p id="prefill-note" class="prefill-note" hidden></p>
+        <form id="preorder-form" action="#" method="post" novalidate>
           <fieldset>
             <legend>Your Contact Information</legend>
 
             <label for="name">Full name (required)</label>
-            <input type="text" id="name" name="name" autocomplete="name" minlength="2" maxlength="60" required>
+            <input type="text" id="name" name="name" autocomplete="name" minlength="2" maxlength="60" required aria-describedby="name-error">
+            <p id="name-error" class="error" aria-live="polite"></p>
 
             <label for="email">Email address (required)</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+            <p id="email-error" class="error" aria-live="polite"></p>
+
+            <div class="checkbox-row">
+              <input type="checkbox" id="remember" name="remember">
+              <label for="remember">Remember my name and email on this device</label>
+            </div>
           </fieldset>
 
           <fieldset>
             <legend>Request Details</legend>
 
             <label for="request-type">Request type (required)</label>
-            <select id="request-type" name="request-type" required>
+            <select id="request-type" name="request-type" required aria-describedby="request-type-error">
               <option value="">-- Please choose an option --</option>
               <option value="pre-order">Pre-order</option>
               <option value="custom-cake">Custom cake order</option>
               <option value="event">Event or catering inquiry</option>
               <option value="question">General question</option>
             </select>
+            <p id="request-type-error" class="error" aria-live="polite"></p>
 
             <label for="pickup-date">Pickup date (required for pre-orders)</label>
-            <input type="date" id="pickup-date" name="pickup-date" min="2026-11-23">
+            <input type="date" id="pickup-date" name="pickup-date" min="2026-11-23" aria-describedby="pickup-date-hint pickup-date-error">
+            <p id="pickup-date-hint" class="hint">Custom cakes need at least 3 days' notice.</p>
+            <p id="pickup-date-error" class="error" aria-live="polite"></p>
 
             <label for="item-details">Item details (required)</label>
-            <textarea id="item-details" name="item-details" rows="5" cols="40" minlength="10" maxlength="500" placeholder="Example: 2 country sourdough loaves and 1 dozen croissants" required></textarea>
+            <textarea id="item-details" name="item-details" rows="5" cols="40" minlength="10" maxlength="500" placeholder="Example: 2 country sourdough loaves and 1 dozen croissants" required aria-describedby="item-details-error"></textarea>
+            <p id="item-details-error" class="error" aria-live="polite"></p>
 
             <label for="allergy-notes">Allergy notes, if applicable</label>
             <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="40" maxlength="300" placeholder="Example: nut allergy, dairy-free"></textarea>
           </fieldset>
 
           <button type="submit">Send Request</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
 
